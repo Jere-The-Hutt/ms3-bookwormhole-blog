@@ -18,7 +18,7 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.title
+        return f"{self.title} | written by {self.author}"
 
 
 class Comment(models.Model):
@@ -36,4 +36,4 @@ class Comment(models.Model):
         ordering = ["created_on"]
 
     def __str__(self):
-        return f"Comment {self.body} by {self.name}"
+        return f"Comment {self.body} by {self.author}"
