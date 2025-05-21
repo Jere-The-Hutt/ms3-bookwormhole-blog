@@ -1,0 +1,168 @@
+/* Adobe Fonts import */
+@import url("https://use.typekit.net/btk6xqs.css");
+/* CSS Variables */
+:root {
+    --font-body: "basic-sans-regular", sans-serif;
+    --font-heading: "carta-marina-bold", serif;
+    
+    --primary-color: #a3320b; /*  */
+    --secondary-color: #e6af2e; /*  */
+    --highlight-color: #001514; /*  */
+    --highlight-color-light: #fbfffe; /*  */
+}
+
+body {
+    font-family: var(--font-heading);
+}
+
+.navbar {
+    font-family: var(--font-body);
+    color: var(--highlight-color-light);
+    background-color: var(--highlight-color);
+}
+
+.navbar .nav-link {
+    color: var(--highlight-color-light) !important;
+}
+
+.navbar .nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Branding */
+.navbar-brand {
+    font-family: var(--font-body);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.navbar-brand:hover {
+    color: var(--highlight-color-light);
+}
+
+/* Backgrounds */
+.main-bg {
+    background-color: var(--secondary-color);
+}
+
+.light-bg {
+    background-color: var(--highlight-color-light);
+}
+
+.dark-bg,
+footer.bg-dark {
+    background-color: var(--highlight-color);
+}
+
+/* Cards */
+.card {
+    border: none;
+    background-color: var(--highlight-color-light);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.01);
+}
+
+/* Style card title */
+.card-title {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+}
+
+/* Style card text */
+.card-text {
+    font-family: var(--font-body);
+    color: var(--highlight-color);
+}
+
+/* Post grid styling */
+.image-container {
+    position: relative;
+}
+
+.image-flash {
+    position: absolute;
+    bottom: 5%;
+    left: -2px;
+    background-color: var(--primary-color);
+    padding: 4px 8px;
+    border-radius: 0 4px 4px 0;
+}
+
+.author {
+    color: var(--highlight-color-light);
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+/* Links */
+.post-link {
+    text-decoration: none;
+    color: var(--highlight-color);
+}
+
+.post-link:hover {
+    color: var(--primary-color);
+}
+
+.page-link {
+    color: var(--highlight-color);
+}
+
+.page-link:hover {
+    color: var(--primary-color);
+}
+
+/* Buttons */
+.btn-signup,
+.btn-edit {
+    background-color: var(--primary-color);
+    color: var(--highlight-color-light);
+    border: none;
+}
+
+.btn-signup:hover,
+.btn-edit:hover {
+    background-color: var(--secondary-color);
+    color: var(--highlight-color-light);
+}
+
+.btn-like {
+    color: var(--primary-color);
+    background: transparent;
+    border: none;
+}
+
+.btn-like:hover {
+    opacity: 0.8;
+}
+
+.btn-delete {
+    background: var(--primary-color);
+    color: var(--highlight-color-light);
+    border: none;
+}
+
+.btn-delete:hover {
+    background: #822507; /* Darker fallback for primary color */
+}
+
+/* Utilities */
+.faded {
+    color: #acafaf;
+}
+
+.approval {
+    color: #de92a8;
+}
+
+/* Typography helpers */
+.text-muted {
+    color: #6c757d !important;
+}
