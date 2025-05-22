@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="hero-section">
+    <div class="custom-container">
+        <div class="row g-0">
+            <div class="col-md-6 hero-text">
+                <h1 class="custom-title">{{ post.title }}</h1>
+                <p class="custom-meta">{{ post.author }} | {{ post.created_on }}</p>
+            </div>
+            <div class="d-none d-md-block col-md-6 hero-image">
+                <img src="{% static 'images/danika-perkinson-ZGFveFhBZ6c-unsplash.jpg' %}" class="responsive-img" alt="placeholder">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="custom-container">
+    <div class="row">
+        <div class="col post-card mt-4 mb-4">
+            <div class="post-content">
+                <p class="post-body">
+                    {{ post.body | safe }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
