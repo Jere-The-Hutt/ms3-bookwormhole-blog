@@ -1,25 +1,30 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 mt-3">
             <div class="row">
                 {% for post in post_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ post.author }}</p>
-                                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 d-flex flex-column">
+                        <div class="image-container">
+                            <img class="card-img-top"
+                                src="{% static 'images/danika-perkinson-ZGFveFhBZ6c-unsplash.jpg' %}"
+                                alt="placeholder image">
+                            <div class="image-flash">
+                                <p class="author">Author: {{ post.author }}</p>
                             </div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
                             <a href="{% url 'post_detail' slug=post.slug %}" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
-                            <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on }}</p>
+                            <div class="mt-auto">
+                                <hr />
+                                <p class="card-text text-muted h6">{{ post.created_on }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>

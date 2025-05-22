@@ -128,6 +128,7 @@ footer.bg-dark {
     background-color: var(--highlight-color-light);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s ease-in-out;
+    border-radius: 0.5rem;
 }
 
 .card:hover {
@@ -144,6 +145,52 @@ footer.bg-dark {
 .card-text {
     font-family: var(--font-body);
     color: var(--highlight-color);
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+    object-position: center bottom;
+}
+
+/* Container spacing */
+.container {
+    max-width: 90%;
+    padding: 5rem 5rem;
+    background-color: var(--highlight-color-light);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+/* About image */
+.about-image {
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+    margin-right: 5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* About title */
+.about-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* About body text */
+.about-body {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* Updated text */
+.updated-on {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 2rem;
+    text-align: right;
 }
 
 /* Post grid styling */

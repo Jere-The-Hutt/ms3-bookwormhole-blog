@@ -17,7 +17,7 @@ def post_detail(request, slug):
     Template: reviews/post_detail.html
     """
     queryset = Post.objects.filter(status=1)
-    post = get_object_or_404(Post, slug=slug)
+    post = get_object_or_404(queryset, slug=slug)
     return render(
         request,
         "reviews/post_detail.html",

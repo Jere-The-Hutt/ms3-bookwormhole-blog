@@ -8,7 +8,7 @@
     --primary-color: #6b0504; /*  */
     --secondary-color: #e8b641; /*  */
     --highlight-color: #001514; /*  */
-    --highlight-color-light: #fbfffe; /*  */
+    --highlight-color-light: #FFFCFA; /*  */
 }
 
 body {
@@ -65,9 +65,66 @@ footer.bg-dark {
     color: var(--highlight-color-light);
 }
 
+/* Hero section */
+.hero-section {
+    background: var(--highlight-color-light);
+    padding: 1rem 0;
+    box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.18);
+}
+
+.custom-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.hero-text {
+    text-align: center;
+    margin: auto;
+    padding: 1rem;
+}
+
+.custom-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--highlight-color);
+}
+
+.custom-meta {
+    font-size: 0.95rem;
+    color: #777;
+    margin-top: 0.5rem;
+}
+
+/* Responsive image */
+.hero-image img,
+.responsive-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Post content */
+.post-card {
+    background: var(--highlight-color-light);
+    box-shadow: 0 2px 8px rgba(53, 48, 48, 0.05);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.post-content {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: var(--highlight-color);
+}
+
+.post-body {
+    margin-top: 1rem;
+}
+
 /* Cards */
 .card {
-    border: none;
+    border: 2px solid var(--primary-color);
     background-color: var(--highlight-color-light);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s ease-in-out;
@@ -89,6 +146,46 @@ footer.bg-dark {
     color: var(--highlight-color);
 }
 
+/* Container spacing */
+.container {
+    max-width: 90%;
+    padding: 5rem 5rem;
+    background-color: var(--highlight-color-light);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+/* About image */
+.about-image {
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+    margin-right: 5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* About title */
+.about-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* About body text */
+.about-body {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* Updated text */
+.updated-on {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 2rem;
+    text-align: right;
+}
+
 /* Post grid styling */
 .image-container {
     position: relative;
@@ -100,7 +197,7 @@ footer.bg-dark {
     left: -2px;
     background-color: var(--primary-color);
     padding: 4px 8px;
-    border-radius: 0 4px 4px 0;
+    border-radius: 4px;
 }
 
 .author {
@@ -126,6 +223,7 @@ footer.bg-dark {
     text-transform: uppercase;
     border: none;
     margin: 0.5rem;
+    border-radius: 4px;
 }
 
 .page-link:hover {
