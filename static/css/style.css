@@ -31,6 +31,10 @@ body {
     color: var(--secondary-color) !important;
 }
 
+.nav-link.active {
+    color: var(--secondary-color) !important;
+}
+
 .navbar-text {
     color: var(--secondary-color);
 }
@@ -119,10 +123,14 @@ footer.bg-dark {
 
 .page-link {
     color: var(--highlight-color);
+    text-transform: uppercase;
+    border: none;
+    margin: 0.5rem;
 }
 
 .page-link:hover {
     color: var(--primary-color);
+    transform: scale(1.1);
 }
 
 /* Buttons */
