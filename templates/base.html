@@ -36,11 +36,11 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == index_url %}active{% endif %}"
+                        <a class="nav-link {% if request.path == home_url %}active{% endif %}"
                             href="{% url 'home' %}">Home</a>
                     </li>
                 </ul>
-                <span class="navbar-text text-muted">
+                <span class="navbar-text">
                     A blog for book lovers
                 </span>
             </div>
@@ -54,7 +54,11 @@
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3 bg-dark">
-        <p class="m-0 text-center text-white">© Bookwormhole</p>
+        <p class="m-0 text-center">
+            {% block copyright %}
+                © Bookwormhole
+            {% endblock copyright %}
+        </p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"

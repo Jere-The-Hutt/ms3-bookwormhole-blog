@@ -2,23 +2,25 @@
 @import url("https://use.typekit.net/btk6xqs.css");
 /* CSS Variables */
 :root {
-    --font-body: "basic-sans-regular", sans-serif;
-    --font-heading: "carta-marina-bold", serif;
+    --font-body: basic-sans, sans-serif;
+    --font-heading: carta-marina, sans-serif;
     
-    --primary-color: #a3320b; /*  */
-    --secondary-color: #e6af2e; /*  */
+    --primary-color: #6b0504; /*  */
+    --secondary-color: #e8b641; /*  */
     --highlight-color: #001514; /*  */
     --highlight-color-light: #fbfffe; /*  */
 }
 
 body {
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
 }
 
 .navbar {
-    font-family: var(--font-body);
+    font-family: var(--font-heading);
     color: var(--highlight-color-light);
     background-color: var(--highlight-color);
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .navbar .nav-link {
@@ -26,15 +28,18 @@ body {
 }
 
 .navbar .nav-link:hover {
-    color: var(--primary-color) !important;
+    color: var(--secondary-color) !important;
+}
+
+.navbar-text {
+    color: var(--secondary-color);
 }
 
 /* Branding */
 .navbar-brand {
-    font-family: var(--font-body);
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: 700;
-    color: var(--secondary-color);
+    color: var(--highlight-color-light);
 }
 
 .navbar-brand:hover {
@@ -53,6 +58,7 @@ body {
 .dark-bg,
 footer.bg-dark {
     background-color: var(--highlight-color);
+    color: var(--highlight-color-light);
 }
 
 /* Cards */
@@ -69,8 +75,8 @@ footer.bg-dark {
 
 /* Style card title */
 .card-title {
-    font-family: var(--font-heading);
-    color: var(--primary-color);
+    font-family: var(--font-body);
+    color: var(--highlight-color);
 }
 
 /* Style card text */
