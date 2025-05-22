@@ -124,11 +124,16 @@ footer.bg-dark {
 
 /* Cards */
 .card {
-    border: 2px solid var(--primary-color);
+    position: relative;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
     background-color: var(--highlight-color-light);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease-in-out;
-    border-radius: 0.5rem;
+    background-clip: border-box;
+    border: 2px solid var(--primary-color);
+    border-radius: .25rem;
 }
 
 .card:hover {
