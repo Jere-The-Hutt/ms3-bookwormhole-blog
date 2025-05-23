@@ -58,6 +58,10 @@ body {
     color: var(--highlight-color-light);
 }
 
+.navbar-brand:hover {
+    color: var(--highlight-color-light);
+}
+
 /* Backgrounds */
 .main-bg {
     background-color: var(--secondary-color);
@@ -135,6 +139,25 @@ footer {
 
 .post-body {
     margin-top: 1rem;
+}
+
+.comment-count {
+    color: var(--highlight-color-light) !important;
+}
+
+.card-comments {
+    background: var(--primary-color);
+    box-shadow: 0 6px 8px rgba(53, 48, 48, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.card-comments h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--secondary-color);
+    text-shadow: 0 0px 5px var(--highlight-color-light);
 }
 
 /* Authentication */
