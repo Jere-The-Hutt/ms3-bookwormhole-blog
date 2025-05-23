@@ -64,7 +64,7 @@ body {
 
 /* Backgrounds */
 .main-bg {
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     background-color: var(--secondary-color);
 }
 
@@ -86,7 +86,6 @@ footer {
 
 /* Hero section */
 .hero-section {
-    margin-top: 1rem;
     min-height: 100px;
     background: var(--highlight-color-light);
     padding: 1rem 0;
@@ -156,6 +155,13 @@ footer {
 
 .post-body {
     margin-top: 1rem;
+}
+
+/* Comments */
+.comment-confirmation {
+    font-family: var(--font-body);
+    color: var(--primary-color);
+    margin-top: 2rem;
 }
 
 .comment-count {
@@ -331,14 +337,14 @@ footer {
 /* Buttons */
 .btn-signup,
 .btn-edit {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: var(--highlight-color-light);
     border: none;
 }
 
 .btn-signup:hover,
 .btn-edit:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     color: var(--highlight-color-light);
 }
 
@@ -353,13 +359,13 @@ footer {
 }
 
 .btn-delete {
-    background: var(--primary-color);
+    background: rgb(168, 49, 49);
     color: var(--highlight-color-light);
     border: none;
 }
 
 .btn-delete:hover {
-    background: #822507; /* Darker fallback for primary color */
+    background: #660e0e; /* Darker fallback for primary color */
 }
 
 /* Utilities */
