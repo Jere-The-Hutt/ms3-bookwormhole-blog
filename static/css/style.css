@@ -21,7 +21,7 @@ body {
     background-color: var(--highlight-color);
     padding-left: 1rem;
     padding-right: 1rem;
-    box-shadow: 0 8px 24px 8px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 5px 24px 8px rgba(0, 0, 0, 0.18);
 }
 
 #navToggleIcon {
@@ -64,6 +64,7 @@ body {
 
 /* Backgrounds */
 .main-bg {
+    margin-top: 3rem;
     background-color: var(--secondary-color);
 }
 
@@ -85,6 +86,8 @@ footer {
 
 /* Hero section */
 .hero-section {
+    margin-top: 1rem;
+    min-height: 100px;
     background: var(--highlight-color-light);
     padding: 1rem 0;
     box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.18);
@@ -137,27 +140,53 @@ footer {
     color: var(--highlight-color);
 }
 
+.custom-title {
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--highlight-color);
+}
+
 .post-body {
     margin-top: 1rem;
 }
 
 .comment-count {
-    color: var(--highlight-color-light) !important;
+    color: var(--primary-color) !important;
 }
 
 .card-comments {
-    background: var(--primary-color);
+    color: var(--highlight-color-light);
+    background: var(--highlight-color);
     box-shadow: 0 6px 8px rgba(53, 48, 48, 0.05);
-    border-radius: 12px;
+    max-height: 500px;
     padding: 1.5rem;
     margin-top: 1rem;
+    overflow-y: auto;
 }
 
 .card-comments h3 {
     font-family: var(--font-heading);
     font-weight: 700;
+    color: var(--primary-color);
+}
+
+.comment-author {
+    font-family: var(--font-body);
     color: var(--secondary-color);
-    text-shadow: 0 0px 5px var(--highlight-color-light);
+}
+
+.comment-form {
+    color: var(--highlight-color-light);
+    background-color: var(--highlight-color);
+    box-shadow: 0 2px 8px rgba(53, 48, 48, 0.05);
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.comment-form h3{
+    font-family: var(--font-heading);
+    color: var(--primary-color);
 }
 
 /* Authentication */

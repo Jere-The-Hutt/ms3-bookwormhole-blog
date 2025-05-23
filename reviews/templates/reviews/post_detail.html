@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
-{% block content %}
 {% load static %}
+{% load crispy_forms_tags %}
 
+{% block content %}
 <div class="hero-section">
     <div class="custom-container">
         <div class="row g-0">
@@ -49,7 +50,7 @@
                 <div class="p-2 comments
           {% if not comment.approved and comment.author == user %}
           faded{% elif not comment.approved %} d-none{% endif %}">
-                    <p class="font-weight-bold">
+                    <p class="font-weight-bold comment-author">
                         {{ comment.author }}
                         <span class="font-weight-normal">
                             {{ comment.created_on }}
@@ -66,6 +67,22 @@
                 </div>
                 <!-- Our for loop ends here -->
                 {% endfor %}
+            </div>
+        </div>
+        <!-- Creating New Comments -->
+        <div class="col-md-4 mb-4 mt-3">
+            <div class="card-body comment-form">
+                {% if user.is_authenticated %}
+                <h3>Leave a comment:</h3>
+                <p>Posting as: {{ user.username }}</p>
+                <form id="commentForm" method="post" style="margin-top: 1.3em;">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+                </form>
+                {% else %}
+                <p>Log in to leave a comment</p>
+                {% endif %}
             </div>
         </div>
     </div>
