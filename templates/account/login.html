@@ -10,7 +10,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
-            <h3>{% trans "Sign In" %}</h3>
+            <h3 class="auth-header">{% trans "Sign In" %}</h3>
 
             <p>{% blocktrans %}Welcome back to the code|star blog. To leave a comment or like a post, please log in. If
                 you
@@ -31,4 +31,7 @@
         </div>
     </div>
 </div>
+{% endblock %}
+{% block copyright %}
+© Jere Huttunen | Bookwormhole 2025
 {% endblock %}
