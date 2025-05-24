@@ -19,14 +19,13 @@ body {
     font-family: var(--font-heading);
     color: var(--highlight-color-light);
     background-color: var(--highlight-color);
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0 1rem 0 1rem;
     box-shadow: 0 5px 24px 8px rgba(0, 0, 0, 0.18);
 }
 
 #navToggleIcon {
     color: var(--primary-color);
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .navbar-toggler:focus {
@@ -64,7 +63,6 @@ body {
 
 /* Backgrounds */
 .main-bg {
-    margin-top: 1.5rem;
     background-color: var(--secondary-color);
 }
 
@@ -87,15 +85,28 @@ footer {
 /* Hero section */
 .hero-section {
     min-height: 100px;
-    background: var(--highlight-color-light);
     padding: 1rem 0;
-    box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.18);
 }
 
 .custom-container {
-    max-width: 960px;
     margin: 0 auto;
     padding: 0 1rem;
+}
+
+.hero-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--highlight-color-light);
+    font-family: var(--font-heading);
+    font-size: 6rem;
+    font-weight: 700;
+    text-shadow: 2px 10px 15px rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
 }
 
 .hero-text {
@@ -251,7 +262,6 @@ footer {
 /* Container spacing */
 .container {
     max-width: 90%;
-    margin-top: 2rem;
     padding: 5rem 5rem;
     background-color: var(--highlight-color-light);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -292,6 +302,23 @@ footer {
 /* Post grid styling */
 .image-container {
     position: relative;
+    display: inline-block;
+    width: 100%;
+    height: fit-content;
+}
+
+.hero-image-container {
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    overflow: hidden;
+}
+
+.hero-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .image-flash {
@@ -312,6 +339,7 @@ footer {
 }
 
 /* Links */
+
 .post-link {
     text-decoration: none;
     color: var(--highlight-color);
@@ -380,4 +408,11 @@ footer {
 /* Typography helpers */
 .text-muted {
     color: #6c757d !important;
+}
+
+/* Media queries */
+@media screen and (min-width: 1200px) {
+    .post-container {
+        padding: 0 60px 0 60px;
+    }
 }

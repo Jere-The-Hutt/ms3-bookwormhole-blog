@@ -2,65 +2,66 @@
 {% load static %}
 {% block content %}
 <!-- Hero section -->
-<div class="hero-section">
-    <div class="custom-container">
-        <div class="row g-0">
-            <div class="col-md-6 hero-text">
-                <h1 class="custom-title">Welcome to the wormhole</h1>
+<div class="main-bg">
+    <div class="hero-section">
+        <div>
+            <div class="hero-image-container text-center">
+                <img class="card-img-top" src="{% static 'images/engin-akyurt-o-99rrlwNVY-unsplash.jpg' %}"
+                    alt="placeholder image">
+                <h1 class="hero-title">Welcome to the wormhole</h1>
             </div>
         </div>
     </div>
-</div>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 mt-3">
-            <div class="row">
-                {% for post in post_list %}
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 d-flex flex-column">
-                        <div class="image-container">
-                            <img class="card-img-top"
-                                src="{% static 'images/danika-perkinson-ZGFveFhBZ6c-unsplash.jpg' %}"
-                                alt="placeholder image">
-                            <div class="image-flash">
-                                <p class="author">Author: {{ post.author }}</p>
+    <div class="post-container">
+        <div class="row">
+            <div class="col-12 mt-3">
+                <div class="row">
+                    {% for post in post_list %}
+                    <div class="col-lg-4 col-md-6 col-12 mb-4 justify-content-center">
+                        <div class="card h-100 d-flex flex-column">
+                            <div class="image-container">
+                                <img class="card-img-top"
+                                    src="{% static 'images/danika-perkinson-ZGFveFhBZ6c-unsplash.jpg' %}"
+                                    alt="placeholder image">
+                                <div class="image-flash">
+                                    <p class="author">Author: {{ post.author }}</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <a href="{% url 'post_detail' slug=post.slug %}" class="post-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
-                                <p class="card-text">{{ post.excerpt }}</p>
-                            </a>
-                            <div class="mt-auto">
-                                <hr />
-                                <p class="card-text text-muted h6">{{ post.created_on }}</p>
+                            <div class="card-body d-flex flex-column">
+                                <a href="{% url 'post_detail' slug=post.slug %}" class="post-link">
+                                    <h2 class="card-title">{{ post.title }}</h2>
+                                    <p class="card-text">{{ post.excerpt }}</p>
+                                </a>
+                                <div class="mt-auto">
+                                    <hr />
+                                    <p class="card-text text-muted h6">{{ post.created_on }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    {% if forloop.counter|divisibleby:3 %}
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
+                <div class="row">
+                    {% endif %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
-    </div>
 
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; Previous </a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link">Next &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
-</div>
-{% endblock %}
-{% block copyright %}
-© Jere Huttunen | Bookwormhole 2025
-{% endblock %}
+        {% if is_paginated %}
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; Previous </a></li>
+                {% endif %}
+                {% if page_obj.has_next %}
+                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link">Next &raquo;</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
+    {% endblock %}
+    {% block copyright %}
+    © Jere Huttunen | Bookwormhole 2025
+    {% endblock %}
