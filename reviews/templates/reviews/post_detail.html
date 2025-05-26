@@ -5,16 +5,14 @@
 {% block content %}
 <!-- Hero section -->
 <div class="hero-section">
-    <div class="custom-container">
-        <div class="row g-0">
-            <div class="col-md-6 hero-text">
-                <h1 class="custom-title">{{ post.title }}</h1>
-                <p class="custom-meta">{{ post.author }} | {{ post.created_on }}</p>
-            </div>
-            <div class="d-none d-md-block col-md-6 hero-image">
-                <img src="{% static 'images/danika-perkinson-ZGFveFhBZ6c-unsplash.jpg' %}" class="responsive-img"
-                    alt="placeholder">
-            </div>
+    <div class="row g-0">
+        <div class="col-md-4 hero-text">
+            <h1>{{ post.title }}</h1>
+            <p class="custom-meta">{{ post.author }} | {{ post.created_on }}</p>
+        </div>
+        <div class="d-none d-md-block col-md-8 hero-image">
+            <img src="{% static 'images/danika-perkinson-ZGFveFhBZ6c-unsplash.jpg' %}" class="responsive-img"
+                alt="placeholder">
         </div>
     </div>
 </div>
@@ -31,18 +29,15 @@
     </div>
     <!-- Displaying count of comments -->
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 text-center">
             <strong class="text-secondary comment-count">
                 <i class="far fa-comments"></i> {{ comment_count }}
             </strong>
         </div>
-        <div class="col-12">
-            <hr>
-        </div>
     </div>
     <!-- Displaying Comments -->
     <div class="row">
-        <div class="col-md-8 card-comments mb-4  mt-3 ">
+        <div class="col-md-6 card-comments mb-4  mt-3 ">
             <h3>Comments:</h3>
             <div class="card-body">
                 <!-- We want a for loop inside the empty control tags
@@ -75,7 +70,7 @@
             </div>
         </div>
         <!-- Creating New Comments -->
-        <div class="col-md-4 mb-4 mt-3">
+        <div class="col-md-6 mb-4 mt-3">
             <div class="card-body comment-form">
                 {% if user.is_authenticated %}
                 <h3>Leave a comment:</h3>
