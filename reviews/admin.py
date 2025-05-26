@@ -1,6 +1,12 @@
 from django.contrib import admin
-from .models import Post, Comment
+from .models import Post, Comment, Genre
 from django_summernote.admin import SummernoteModelAdmin
+
+
+@admin.register(Genre)
+class GenreAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('name',)}
+    list_display = ('name',)
 
 
 @admin.register(Post)
