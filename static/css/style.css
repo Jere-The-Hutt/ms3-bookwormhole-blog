@@ -89,6 +89,7 @@ footer {
 .hero-section {
     min-height: 100px;
     background-color: var(--highlight-color-light);
+    padding-top: 25px;
 }
 
 .hero-section .row {
@@ -98,7 +99,6 @@ footer {
 .hero-text {
     color: var(--highlight-color);
     text-align: center;
-    padding: 1rem;
 }
 
 .hero-text h1 {
@@ -107,7 +107,6 @@ footer {
     font-weight: 700;
     color: var(--highlight-color);
     margin: 1rem 1rem 0 2rem;
-    word-break: break-word;
     line-height: 1.2;
 }
 
@@ -183,7 +182,7 @@ footer {
 .comment-confirmation {
     font-family: var(--font-body);
     color: var(--primary-color);
-    margin-top: 2rem;
+    margin-top: 1.9rem;
 }
 
 .comment-count {
@@ -279,7 +278,7 @@ footer {
 
 .container {
     max-width: 90%;
-    padding: 5rem;
+    padding: 3rem;
     background-color: var(--highlight-color-light);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     border-radius: 10px;
