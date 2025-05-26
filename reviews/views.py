@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from .models import Post, Comment
+from .models import Post, Comment, Genre
 from .forms import CommentForm
 
 
@@ -90,3 +90,11 @@ def comment_delete(request, slug, comment_id):
             request, messages.ERROR, 'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+def genre_posts(request, slug):
+    genre = get_object_or_404(Genre, slug=slug)
+    posts = Post.objects.filter(
+        genre=genre, status=1).order_by('-created_on')
+    return render(
+        request, 'reviews/genre_posts.html', {'genre': genre, 'posts': posts})

@@ -32,6 +32,13 @@
                                     <h2 class="card-title">{{ post.title }}</h2>
                                     <p class="card-text">{{ post.excerpt }}</p>
                                 </a>
+                                {% if post.genre %}
+                                <p>Genre:
+                                    <a href="{% url 'genre_posts' post.genre.slug %}">
+                                        {{ post.genre.name }}
+                                    </a>
+                                </p>
+                                {% endif %}
                                 <div class="mt-auto">
                                     <hr />
                                     <p class="card-text text-muted h6">{{ post.created_on }}</p>

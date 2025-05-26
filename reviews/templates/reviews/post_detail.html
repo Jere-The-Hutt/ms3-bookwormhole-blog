@@ -9,6 +9,15 @@
         <div class="col-md-4 hero-text">
             <h1>{{ post.title }}</h1>
             <p class="custom-meta">{{ post.author }} | {{ post.created_on }}</p>
+            {% if post.genre and post.genre.slug %}
+            <p>Genre:
+                <a href="{% url 'genre_posts' post.genre.slug %}">
+                    {{ post.genre.name }}
+                </a>
+            </p>
+            {% else %}
+            <p>Genre: Not specified</p>
+            {% endif %}
         </div>
         <div class="d-none d-md-block col-md-8 hero-image">
             <img src="{% static 'images/danika-perkinson-ZGFveFhBZ6c-unsplash.jpg' %}" class="responsive-img"
