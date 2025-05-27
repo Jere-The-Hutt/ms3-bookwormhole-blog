@@ -23,7 +23,7 @@ for (let button of editButtons) {
     let commentContent = document.getElementById(`comment${commentId}`).innerText;
     commentText.value = commentContent;
     submitButton.innerText = "Update";
-    commentForm.setAttribute("action", `edit_comment/${commentId}`);
+    commentForm.setAttribute("action", `edit_comment/${commentId}/`);
   });
 }
 
