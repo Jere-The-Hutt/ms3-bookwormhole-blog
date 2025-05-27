@@ -4,19 +4,19 @@
 
 {% block content %}
 <!-- Hero section -->
-<div class="hero-section">
+<div class="hero-detail-section">
     <div class="row g-0">
         <div class="col-md-4 hero-text">
             <h1>{{ post.title }}</h1>
             <p class="custom-meta">{{ post.author }} | {{ post.created_on }}</p>
             {% if post.genre and post.genre.slug %}
-            <p>Genre:
+            <p class="genre-post">Genre:
                 <a href="{% url 'genre_posts' post.genre.slug %}">
                     {{ post.genre.name }}
                 </a>
             </p>
             {% else %}
-            <p>Genre: Not specified</p>
+            <p class="genre-post">Genre: Not specified</p>
             {% endif %}
         </div>
         <div class="d-none d-md-block col-md-8 hero-image">
@@ -46,8 +46,8 @@
     </div>
     <!-- Displaying Comments -->
     <div class="row">
-        <div class="col-md-6 card-comments mb-4  mt-3 ">
-            <h3>Comments:</h3>
+        <div class="col-md-6 col-lg-8 card-comments mb-3">
+            <h3 class="text-center">Comments:</h3>
             <div class="card-body">
                 <!-- We want a for loop inside the empty control tags
           to iterate through each comment in comments -->
@@ -79,10 +79,10 @@
             </div>
         </div>
         <!-- Creating New Comments -->
-        <div class="col-md-6 mb-4 mt-3">
+        <div class="col-md-6 col-lg-4 mb-4 mt-3">
             <div class="card-body comment-form">
                 {% if user.is_authenticated %}
-                <h3>Leave a comment:</h3>
+                <h3 class="text-center">Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
                 <form id="commentForm" method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}

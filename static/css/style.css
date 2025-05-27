@@ -28,7 +28,7 @@ body {
     font-family: var(--font-heading);
     color: var(--highlight-color-light);
     background-color: var(--highlight-color);
-    padding: 0.7rem 3px 0.7rem 0.7rem;
+    max-width: 100vw;
 }
 
 .navbar-toggler {
@@ -54,13 +54,17 @@ body {
     text-transform: uppercase;
 }
 
+.navbar-text {
+    padding: 0;
+}
+
 .navbar-slogan {
     color: var(--primary-color);
-    margin-bottom: 0;
+    margin: 0 2rem 0;
 }
 
 .navbar-brand {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--highlight-color-light);
 }
@@ -85,12 +89,11 @@ footer {
 }
 
 /* ======================== */
-/*       HERO SECTION      */
+/*    INDEX HERO SECTION    */
 /* ======================== */
 .hero-section {
     min-height: 100px;
     background-color: var(--highlight-color-light);
-    padding-top: 17px;
 }
 
 .hero-section .row {
@@ -99,16 +102,16 @@ footer {
 
 .hero-text {
     color: var(--highlight-color);
-    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 .hero-text h1 {
     font-family: var(--font-heading);
     font-size: 2.7rem;
     font-weight: 700;
+    text-align: left;
     color: var(--highlight-color);
-    margin: 1rem 1rem 0 2rem;
-    line-height: 1.2;
 }
 
 .hero-title {
@@ -132,7 +135,6 @@ footer {
     object-position: center;
 }
 
-.hero-image img,
 .responsive-img {
     width: 100%;
     height: auto;
@@ -154,15 +156,73 @@ footer {
 }
 
 /* ======================== */
+/*     POST DETAIL HERO     */
+/* ======================== */
+.hero-detail-section {
+    min-height: 340px;
+    background-color: var(--highlight-color-light);
+    display: flex;
+    align-items: stretch;
+}
+
+.hero-detail-section .row {
+    flex: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    width: 100%;
+    margin: 0; /* Recommended to override Bootstrap's row gutter */
+}
+
+.hero-detail-section .hero-text {
+    text-align: left;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-detail-section .hero-text h1 {
+    font-size: clamp(1.5rem, 2.5vw, 2.8rem);
+    line-height: 1.2;
+}
+
+.hero-detail-section .hero-text p {
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+}
+
+.hero-detail-section .hero-image {
+    height: 100%;
+    overflow: hidden;
+    display: flex; /* Ensures child fills height */
+    align-items: stretch;
+}
+
+.hero-detail-section .hero-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.genre-post {
+    color: var(--secondary-color);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 15px;
+}
+
+
+/* ======================== */
 /*     POST COMPONENTS     */
 /* ======================== */
 .post-card {
     background: var(--highlight-color-light);
     box-shadow: 0 2px 8px rgba(53, 48, 48, 0.05);
     border: none;
-    max-width: 380px;
     width: 100%; 
-    max-width: 22rem;
+    max-width: 26rem;
 }
 
 .post-card:hover {
@@ -203,7 +263,8 @@ footer {
 .comment-confirmation {
     font-family: var(--font-body);
     color: var(--primary-color);
-    margin-top: 1.9rem;
+    padding-bottom: 0;
+    max-width: 100vw;
 }
 
 .comment-count {
@@ -214,8 +275,9 @@ footer {
     color: var(--highlight-color-light);
     background: var(--highlight-color);
     box-shadow: 0 6px 8px rgba(53, 48, 48, 0.05);
-    max-height: 500px;
-    padding: 1.5rem;
+    max-height: 460px;
+    padding: 1rem;
+    border-radius: 12px;
     margin-top: 1rem;
     overflow-y: auto;
 }
@@ -235,8 +297,8 @@ footer {
     color: var(--highlight-color-light);
     background-color: var(--highlight-color);
     box-shadow: 0 2px 8px rgba(53, 48, 48, 0.05);
+    max-height: 460px;
     border-radius: 12px;
-    margin-top: 1rem;
     padding: 1rem;
 }
 
@@ -320,7 +382,6 @@ footer {
     font-size: 0.95rem;
     color: #777;
     margin-top: 0.5rem;
-    margin-left: 2rem;
 }
 
 .updated-on {
@@ -438,21 +499,31 @@ footer {
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 767px) {
     .hero-text {
-        padding-right: 2rem;
-        text-align: left;
+        padding: 0 2rem 0 1rem;
         font-size: 50px;
+        color: var(--primary-color);
     }
     .custom-title {
         font-size: 30px;
-        margin: none;
     }
-}
+    .hero-detail-section {
+        padding: 1rem 0 0;
+        min-height: unset;
+    }
+    .hero-detail-section .hero-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 1rem;
+    }
 
-@media screen and (max-width: 768px) {
-    .custom-title {
-        font-size: 30px;
+    .hero-detail-section .hero-text h1 {
+        text-align: center;
+        padding-top: 1rem;
     }
 }
 
@@ -463,9 +534,7 @@ footer {
     .hero-image-container {
         height: 30vh;
     }
-    .navbar-brand {
-        font-size: 1.5rem;
-    }
+
     .custom-container {
         margin: 0 0.7rem;
         padding: 0 0.7rem;
