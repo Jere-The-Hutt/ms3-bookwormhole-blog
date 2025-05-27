@@ -14,16 +14,14 @@
     --highlight-color-light: #FFFCFA; /* Snow */
 }
 
+
 /* ======================== */
-/*       BASE STYLES       */
+/*        BASE.HTML         */
 /* ======================== */
 body {
     font-family: var(--font-body);
 }
 
-/* ======================== */
-/*         NAVBAR          */
-/* ======================== */
 .navbar {
     font-family: var(--font-heading);
     color: var(--highlight-color-light);
@@ -73,23 +71,17 @@ body {
     color: var(--highlight-color-light);
 }
 
-/* ======================== */
-/*      BACKGROUNDS        */
-/* ======================== */
-.main-bg {
-    background-color: var(--secondary-color);
-}
-
-/* ======================== */
-/*         FOOTER          */
-/* ======================== */
 footer {
     background-color: var(--highlight-color);
     color: var(--highlight-color-light);
 }
 
+.main-bg {
+    background-color: var(--secondary-color);
+}
+
 /* ======================== */
-/*    INDEX HERO SECTION    */
+/*        INDEX.HTML        */
 /* ======================== */
 .hero-section {
     min-height: 100px;
@@ -156,7 +148,7 @@ footer {
 }
 
 /* ======================== */
-/*     POST DETAIL HERO     */
+/*     POST_DETAIL.HTML     */
 /* ======================== */
 .hero-detail-section {
     min-height: 340px;
@@ -171,7 +163,7 @@ footer {
     flex-wrap: nowrap;
     align-items: stretch;
     width: 100%;
-    margin: 0; /* Recommended to override Bootstrap's row gutter */
+    margin: 0;
 }
 
 .hero-detail-section .hero-text {
@@ -194,7 +186,7 @@ footer {
 .hero-detail-section .hero-image {
     height: 100%;
     overflow: hidden;
-    display: flex; /* Ensures child fills height */
+    display: flex;
     align-items: stretch;
 }
 
@@ -205,7 +197,6 @@ footer {
     object-position: center;
 }
 
-
 .genre-post {
     color: var(--secondary-color);
     font-family: var(--font-body);
@@ -213,15 +204,68 @@ footer {
     font-size: 15px;
 }
 
+/* ======================== */
+/*     ABOUT.HTML           */
+/* ======================== */
+.about-image {
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+    margin-right: 5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.about-body {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--highlight-color);
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    background-color: var(--highlight-color-light);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
 
 /* ======================== */
-/*     POST COMPONENTS     */
+/*     ACCOUNT TEMPLATES    */
+/* ======================== */
+.auth-header {
+    font-family: var(--font-heading);
+}
+
+.auth-form {
+    font-family: var(--font-body);
+    color: var(--highlight-color);
+    min-width: 500px;
+}
+
+.login-container {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--highlight-color-light);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* ======================== */
+/*     GLOBAL COMPONENTS    */
 /* ======================== */
 .post-card {
     background: var(--highlight-color-light);
     box-shadow: 0 2px 8px rgba(53, 48, 48, 0.05);
     border: none;
-    width: 100%; 
+    width: 100%;
     max-width: 26rem;
 }
 
@@ -257,9 +301,6 @@ footer {
     max-width: 1200px;
 }
 
-/* ======================== */
-/*        COMMENTS         */
-/* ======================== */
 .comment-confirmation {
     font-family: var(--font-body);
     color: var(--primary-color);
@@ -308,22 +349,8 @@ footer {
 }
 
 /* ======================== */
-/*     AUTH COMPONENTS     */
+/*         SHARED UTILS     */
 /* ======================== */
-.auth-header {
-    font-family: var(--font-heading);
-}
-
-.auth-form {
-    font-family: var(--font-body);
-    color: var(--highlight-color);
-}
-
-/* ======================== */
-/*       CARD STYLES       */
-/* ======================== */
-
-
 .card-title,
 .card-text {
     font-family: var(--font-body);
@@ -336,9 +363,6 @@ footer {
     object-position: center bottom;
 }
 
-/* ======================== */
-/*     LAYOUT UTILITIES    */
-/* ======================== */
 .custom-container {
     margin: 0 2rem;
     padding: 0 1rem;
@@ -368,9 +392,6 @@ footer {
     font-weight: 600;
 }
 
-/* ======================== */
-/*     CUSTOM TEXT/INFO    */
-/* ======================== */
 .custom-title {
     max-width: 100%;
     white-space: normal;
@@ -391,32 +412,6 @@ footer {
     text-align: right;
 }
 
-/* ======================== */
-/*     ABOUT SECTION       */
-/* ======================== */
-.about-image {
-    border-radius: 50%;
-    max-width: 100%;
-    height: auto;
-    margin-right: 5rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.about-title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-}
-
-.about-body {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #333;
-}
-
-/* ======================== */
-/*         LINKS           */
-/* ======================== */
 .post-link {
     text-decoration: none;
     color: var(--highlight-color);
@@ -439,9 +434,6 @@ footer {
     transform: scale(1.1);
 }
 
-/* ======================== */
-/*         BUTTONS         */
-/* ======================== */
 .btn-signup,
 .btn-edit {
     background-color: var(--secondary-color);
@@ -475,9 +467,6 @@ footer {
     background: #660e0e;
 }
 
-/* ======================== */
-/*       UTILITIES         */
-/* ======================== */
 .faded {
     color: #acafaf;
 }
