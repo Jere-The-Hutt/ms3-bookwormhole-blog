@@ -104,10 +104,12 @@ footer {
     font-weight: 700;
     text-align: left;
     color: var(--highlight-color);
+
 }
 
 .hero-title {
     position: absolute;
+    padding: 0 1rem;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -244,6 +246,20 @@ footer {
 }
 
 /* ======================== */
+/*     GENRE_POSTS.HTML     */
+/* ======================== */
+
+.genre-heading {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    border: var(--highlight-color) 2px solid;
+    border-radius: 12px;
+    background: rgba(0,0,0,0.5);
+}
+
+/* ======================== */
 /*     ACCOUNT TEMPLATES    */
 /* ======================== */
 .auth-header {
@@ -259,7 +275,7 @@ footer {
 .login-container {
     max-width: 700px;
     margin: 2rem auto;
-    padding: 2rem;
+    padding: 2rem 15px;
     background-color: var(--highlight-color-light);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);

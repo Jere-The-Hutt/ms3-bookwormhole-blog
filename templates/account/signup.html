@@ -5,13 +5,13 @@
 {% block head_title %}{% trans "Signup" %}{% endblock head_title %}
 
 {% block content %}
-<div class="container auth-form login-container text-center">
-  <div class="row text-center">
+<div class="container login-container text-center">
+  <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
       <h2 class="auth-header">{% trans "Sign Up" %}</h2>
       <p>{% blocktrans %}
         Already have an account? Then please <a class="link" href="{{ login_url }}">sign in</a>.
-        {%endblocktrans %}</p>
+        {% endblocktrans %}</p>
     </div>
   </div>
   <div class="row">

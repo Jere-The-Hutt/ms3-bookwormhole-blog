@@ -1,4 +1,5 @@
 .venv/
 env.py
+__pycache__/
 review/fixtures/
 staticfiles/

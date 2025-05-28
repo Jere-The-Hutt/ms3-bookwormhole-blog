@@ -1,17 +1,67 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
-  <h1>Posts in "{{ genre.name }}"</h1>
 
-  {% if posts %}
-    {% for post in posts %}
-      <div class="post-card">
-        <h2><a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a></h2>
-        <p>By {{ post.author }} | {{ post.created_on|date:"M d, Y" }}</p>
-        <p>{{ post.excerpt }}</p>
-      </div>
-    {% endfor %}
-  {% else %}
-    <p>No posts found in this genre.</p>
-  {% endif %}
+<div class="main-bg">
+    <div class="post-container py-4 px-0">
+        <div class="container">
+            <h1 class="text-center genre-heading mb-4">Posts in "{{ genre.name }}" genre</h1>
+            <div class="row g-4 justify-content-center">
+                {% if posts %}
+                    {% for post in posts %}
+                        <div class="col-lg-4 col-md-6 col-12 d-flex justify-content-center">
+                            <div class="card post-card h-100 d-flex flex-column">
+                                <div class="image-container">
+                                    <img class="card-img-top"
+                                         src="{% static 'images/danika-perkinson-ZGFveFhBZ6c-unsplash.jpg' %}"
+                                         alt="placeholder image">
+                                    <div class="image-flash">
+                                        <p class="author">Author: {{ post.author }}</p>
+                                    </div>
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <a href="{% url 'post_detail' slug=post.slug %}" class="post-link">
+                                        <h2 class="card-title">{{ post.title }}</h2>
+                                        <p class="card-text">{{ post.excerpt }}</p>
+                                    </a>
+                                    {% if post.genre %}
+                                    <p>Genre:
+                                        <a href="{% url 'genre_posts' post.genre.slug %}">
+                                            {{ post.genre.name }}
+                                        </a>
+                                    </p>
+                                    {% endif %}
+                                    <div class="mt-auto">
+                                        <hr />
+                                        <p class="card-text text-muted h6">{{ post.created_on }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="text-center">No posts found in this genre.</p>
+                {% endif %}
+            </div>
+
+            {% if is_paginated %}
+            <nav aria-label="Page navigation" class="mt-4">
+                <ul class="pagination justify-content-center">
+                    {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; Previous</a>
+                    </li>
+                    {% endif %}
+                    {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a href="?page={{ page_obj.next_page_number }}" class="page-link">Next &raquo;</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
 {% endblock %}

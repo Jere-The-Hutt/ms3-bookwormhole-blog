@@ -8,7 +8,7 @@ from .forms import CommentForm
 
 # Create your views here.
 class PostList(generic.ListView):
-    queryset = Post.objects.filter(status=1)
+    queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "reviews/index.html"
     paginate_by = 6
 
