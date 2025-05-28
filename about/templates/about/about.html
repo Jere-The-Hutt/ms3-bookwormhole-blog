@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="container about-container mt-5">
+<div class="container about-container mt-3 mb-2">
   <div class="row d-flex align-items-center justify-content-center">
     <div class="col-12 text-center">
       <img src="{% static 'images/nobody.jpg' %}" class="about-image" alt="Profile picture">
@@ -32,7 +32,7 @@
           <form method="post" novalidate>
             {% csrf_token %}
             {{ form|crispy }}
-            <button class="btn btn-secondary" type="submit">Submit</button>
+            <button class="btn btn-suggestion" type="submit">Submit</button>
           </form>
         </div>
       </div>

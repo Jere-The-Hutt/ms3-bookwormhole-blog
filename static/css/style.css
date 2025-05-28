@@ -8,10 +8,12 @@
     --font-body: basic-sans, sans-serif;
     --font-heading: carta-marina, sans-serif;
 
-    --primary-color: #e8b641; /* Xanthous */
-    --secondary-color: #558564; /* Viridian */
-    --highlight-color: #001514; /* Rich Black */
-    --highlight-color-light: #FFFCFA; /* Snow */
+    --header-light: #fffcfa; /* Snow */
+    --header-dark: #001514; /* Rich Black */
+    --primary-color: #edb183; /* Xanthous */
+    --secondary-color: #1e555c; /* Viridian */
+    --highlight-color: #3a2e39; /* Rich Black */
+    --highlight-color-light: #f4d8cd; /* Pale Dogwood */
 }
 
 
@@ -64,7 +66,7 @@ body {
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--highlight-color-light);
+    color: var(--header-light);
 }
 
 .navbar-brand:hover {
@@ -72,8 +74,8 @@ body {
 }
 
 footer {
-    background-color: var(--highlight-color);
-    color: var(--highlight-color-light);
+    background-color: var(--primary-color);
+    color: var(--highlight-color);
 }
 
 .main-bg {
@@ -113,7 +115,7 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: var(--highlight-color-light);
+    color: var(--header-light);
     font-family: var(--font-heading);
     font-size: 5rem;
     font-weight: 700;
@@ -225,6 +227,7 @@ footer {
 }
 
 .about-title {
+    color: var(--secondary-color);
     font-size: 2rem;
     margin-bottom: 1rem;
     font-weight: 600;
@@ -264,6 +267,7 @@ footer {
 /* ======================== */
 .suggest-header,
 .auth-header {
+    color: var(--secondary-color);
     font-family: var(--font-heading);
 }
 
@@ -339,7 +343,7 @@ footer {
 }
 
 .card-comments {
-    color: var(--highlight-color-light);
+    color: var(--header-light);
     background: var(--highlight-color);
     box-shadow: 0 6px 8px rgba(53, 48, 48, 0.05);
     max-height: 460px;
@@ -357,7 +361,7 @@ footer {
 
 .comment-author {
     font-family: var(--font-body);
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .comment-form {
@@ -449,6 +453,7 @@ footer {
 
 .page-link {
     color: var(--highlight-color);
+    background-color: var(--primary-color);
     text-transform: uppercase;
     border: none;
     margin: 0.5rem;
@@ -456,8 +461,8 @@ footer {
 }
 
 .page-link:hover {
-    color: var(--primary-color);
-    transform: scale(1.1);
+    color: var(--highlight-color);
+    background-color: var(--highlight-color-light);
 }
 
 .btn-suggestion,
@@ -468,10 +473,10 @@ footer {
     border: none;
 }
 
-.btn-suggestion,
+.btn-suggestion:hover,
 .btn-signup:hover,
 .btn-edit:hover {
-    background-color: var(--primary-color);
+    background-color: var(--highlight-color);
     color: var(--highlight-color-light);
 }
 
