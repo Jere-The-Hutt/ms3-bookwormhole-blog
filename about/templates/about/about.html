@@ -6,7 +6,11 @@
 <div class="container about-container mt-3 mb-2">
   <div class="row d-flex align-items-center justify-content-center">
     <div class="col-12 text-center">
+      {% if "placeholder" in about.profile_image.url %}
       <img src="{% static 'images/nobody.jpg' %}" class="about-image" alt="Profile picture">
+      {% else %}
+      <img src="{{ about.profile_image.url }}" width="75%" alt="{{ about.title }}">
+      {% endif %}
     </div>
     <div class="col-md-8 text-center">
       <h2 class="about-title">{{ about.title }}</h2>
