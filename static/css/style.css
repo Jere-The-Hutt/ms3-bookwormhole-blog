@@ -179,7 +179,7 @@ footer {
 
 .hero-detail-section .hero-text {
     text-align: left;
-    padding: 1rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -522,7 +522,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .hero-text {
         padding: 0 2rem 0 1rem;
         font-size: 50px;
@@ -532,7 +532,6 @@ footer {
         font-size: 30px;
     }
     .hero-detail-section {
-        padding: 1rem 0 0;
         min-height: unset;
     }
     .hero-detail-section .hero-text {
@@ -540,7 +539,6 @@ footer {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        text-align: center;
         padding: 1rem;
     }
 
