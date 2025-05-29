@@ -10,9 +10,9 @@
 
     --header-light: #fffcfa; /* Snow */
     --header-dark: #001514; /* Rich Black */
-    --primary-color: #edb183; /* Xanthous */
-    --secondary-color: #1e555c; /* Viridian */
-    --highlight-color: #3a2e39; /* Rich Black */
+    --primary-color: #edb183; /* Buff */
+    --secondary-color: #1e555c; /* Midnight green */
+    --highlight-color: #3a2e39; /* Raisin black */
     --highlight-color-light: #f4d8cd; /* Pale Dogwood */
 }
 
@@ -186,6 +186,7 @@ footer {
 }
 
 .hero-detail-section .hero-text h1 {
+    color: var(--secondary-color);
     font-size: clamp(1.5rem, 2.5vw, 2.8rem);
     line-height: 1.2;
 }
@@ -206,6 +207,15 @@ footer {
     width: 100%;
     object-fit: cover;
     object-position: center;
+}
+
+.post-detail {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    background-color: var(--header-light);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 .genre-post {
@@ -314,15 +324,6 @@ footer {
     line-height: 1.8;
     color: var(--highlight-color);
     font-family: var(--font-body);
-}
-
-.post-detail {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    background-color: var(--highlight-color-light);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 .post-container {

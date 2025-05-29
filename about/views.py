@@ -15,7 +15,9 @@ def about_me(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, "Thanks! Your suggestion has been submitted.")
+            messages.success(
+                request, "Thanks! Your suggestion has been submitted."
+                )
             return redirect("about")
 
     return render(
