@@ -8,6 +8,13 @@ from .forms import CommentForm
 
 # Create your views here.
 class PostList(generic.ListView):
+    """
+    View to display a paginated list of published blog posts on the homepage.
+
+    - Uses the Post model filtered by status=1 (Published).
+    - Orders posts by newest first.
+    - Template: reviews/index.html
+    """
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "reviews/index.html"
     paginate_by = 6
@@ -15,7 +22,10 @@ class PostList(generic.ListView):
 
 def post_detail(request, slug):
     """
-    Display a single published post based on its slug.
+    Display a single published post based on its slug, along with its comments.
+
+    Handles displaying the post and its comments,
+    and processing new comment submissions.
 
     Template: reviews/post_detail.html
     """
@@ -51,7 +61,12 @@ def post_detail(request, slug):
 
 def comment_edit(request, slug, comment_id):
     """
-    view to edit comments
+    View to allow a user to edit their own comment.
+
+    Only the comment's author can make changes. Upon edit,
+    the comment is marked as unapproved until re-reviewed.
+
+    Redirects to: post_detail
     """
     if request.method == "POST":
 
@@ -76,11 +91,11 @@ def comment_edit(request, slug, comment_id):
 
 def comment_delete(request, slug, comment_id):
     """
-    view to delete comment
+    View to delete a comment if the current user is the comment's author.
+
+    Adds a success or error message and redirects to the post's detail page.
     """
-    queryset = Post.objects.filter(status=1)
-    post = get_object_or_404(queryset, slug=slug)
-    comment = get_object_or_404(Comment, pk=comment_id)
+    comment = get_object_or_404(Comment, pk=comment_id, post__slug=slug)
 
     if comment.author == request.user:
         comment.delete()
@@ -93,6 +108,13 @@ def comment_delete(request, slug, comment_id):
 
 
 def genre_posts(request, slug):
+    """
+    View to display all posts associated with a specific genre.
+
+    Retrieves posts that match the genre's slug and are published.
+
+    Template: reviews/genre_posts.html
+    """
     genre = get_object_or_404(Genre, slug=slug)
     posts = Post.objects.filter(
         genre=genre, status=1).order_by('-created_on')

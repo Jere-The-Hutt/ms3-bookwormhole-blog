@@ -7,6 +7,10 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Genre(models.Model):
+    """
+    Represents a book genre category.
+    Used to classify blog posts.
+    """
     name = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=100, unique=True)
 
@@ -18,6 +22,10 @@ class Genre(models.Model):
 
 
 class Post(models.Model):
+    """
+    Represents a blog post (book review), including title, content, genre,
+    author, image, excerpt, status, and timestamps.
+    """
     title = models.CharField(max_length=200)
     genre = models.ForeignKey(
         Genre, on_delete=models.SET_NULL, null=True, related_name='posts'
@@ -34,10 +42,17 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
+        """
+        Returns the post title along with the author's name.
+        """
         return f"{self.title} | written by {self.author}"
 
 
 class Comment(models.Model):
+    """
+    Represents a user comment on a blog post. Includes author, body, timestamp,
+    and approval status.
+    """
     post = models.ForeignKey(
         Post, on_delete=models.CASCADE, related_name="comments"
         )
@@ -52,4 +67,7 @@ class Comment(models.Model):
         ordering = ["created_on"]
 
     def __str__(self):
+        """
+        Returns a string representation of the comment and its author.
+        """
         return f"Comment {self.body} by {self.author}"

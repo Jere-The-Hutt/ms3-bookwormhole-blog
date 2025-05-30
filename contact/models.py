@@ -3,6 +3,11 @@ from django.db import models
 
 # Create your models here.
 class Contact(models.Model):
+    """
+    Stores contact form submissions from users, including their name,
+    email, a recommended book title and author,
+    a message, and the submission timestamp.
+    """
     name = models.CharField(max_length=100)
     email = models.EmailField()
     book_title = models.CharField(max_length=200)
