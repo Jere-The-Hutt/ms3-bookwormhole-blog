@@ -1,46 +1,46 @@
 {% extends "base.html" %}
 {% load static %}
-{% block content %}
 
+{% block content %}
 <div class="main-bg">
     <div class="post-container py-4 px-0">
         <div class="container">
             <h1 class="text-center genre-heading mb-4">Posts in "{{ genre.name }}" genre</h1>
             <div class="row g-4 justify-content-center">
                 {% if posts %}
-                    {% for post in posts %}
-                        <div class="col-lg-4 col-md-6 col-12 d-flex justify-content-center">
-                            <div class="card post-card h-100 d-flex flex-column">
-                                <div class="image-container">
-                                    <img class="card-img-top"
-                                         src="{% static 'images/danika-perkinson-ZGFveFhBZ6c-unsplash.jpg' %}"
-                                         alt="placeholder image">
-                                    <div class="image-flash">
-                                        <p class="author">Author: {{ post.author }}</p>
-                                    </div>
-                                </div>
-                                <div class="card-body d-flex flex-column">
-                                    <a href="{% url 'post_detail' slug=post.slug %}" class="post-link">
-                                        <h2 class="card-title">{{ post.title }}</h2>
-                                        <p class="card-text">{{ post.excerpt }}</p>
-                                    </a>
-                                    {% if post.genre %}
-                                    <p>Genre:
-                                        <a href="{% url 'genre_posts' post.genre.slug %}">
-                                            {{ post.genre.name }}
-                                        </a>
-                                    </p>
-                                    {% endif %}
-                                    <div class="mt-auto">
-                                        <hr />
-                                        <p class="card-text text-muted h6">{{ post.created_on }}</p>
-                                    </div>
-                                </div>
+                {% for post in posts %}
+                <div class="col-lg-4 col-md-6 col-12 d-flex justify-content-center">
+                    <div class="card post-card h-100 d-flex flex-column">
+                        <div class="image-container">
+                            <img class="card-img-top"
+                                src="{% static 'images/danika-perkinson-ZGFveFhBZ6c-unsplash.jpg' %}"
+                                alt="placeholder image">
+                            <div class="image-flash">
+                                <p class="author">Author: {{ post.author }}</p>
                             </div>
                         </div>
-                    {% endfor %}
+                        <div class="card-body d-flex flex-column">
+                            <a href="{% url 'post_detail' slug=post.slug %}" class="post-link">
+                                <h2 class="card-title">{{ post.title }}</h2>
+                                <p class="card-text">{{ post.excerpt }}</p>
+                            </a>
+                            {% if post.genre %}
+                            <p>Genre:
+                                <a href="{% url 'genre_posts' post.genre.slug %}">
+                                    {{ post.genre.name }}
+                                </a>
+                            </p>
+                            {% endif %}
+                            <div class="mt-auto">
+                                <hr />
+                                <p class="card-text text-muted h6">{{ post.created_on }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
                 {% else %}
-                    <p class="text-center">No posts found in this genre.</p>
+                <p class="text-center">No posts found in this genre.</p>
                 {% endif %}
             </div>
 
