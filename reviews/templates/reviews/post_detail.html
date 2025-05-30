@@ -55,6 +55,7 @@
             <div class="card-body">
                 <!-- We want a for loop inside the empty control tags
           to iterate through each comment in comments -->
+                {% if comments %}
                 {% for comment in comments %}
                 <div class="p-2 comments
           {% if not comment.approved and comment.author == user %}
@@ -74,12 +75,17 @@
                     </p>
                     {% endif %}
                     {% if user.is_authenticated and comment.author == user %}
-                    <button class="btn btn-delete" comment_id="{{ comment.id }}" aria-label="Delete comment by {{ comment.author }}">Delete</button>
-                    <button class="btn btn-edit" comment_id="{{ comment.id }}" aria-label="Edit comment by {{ comment.author }}">Edit</button>
+                    <button class="btn btn-delete" comment_id="{{ comment.id }}"
+                        aria-label="Delete comment by {{ comment.author }}">Delete</button>
+                    <button class="btn btn-edit" comment_id="{{ comment.id }}"
+                        aria-label="Edit comment by {{ comment.author }}">Edit</button>
                     {% endif %}
                 </div>
                 <!-- Our for loop ends here -->
                 {% endfor %}
+                {% else %}
+                <p class="text-center text-muted">No one has commented yet. Be the first to leave one!</p>
+                {% endif %}
             </div>
         </div>
         <!-- Creating New Comments -->
