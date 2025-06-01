@@ -229,11 +229,9 @@ footer {
 /*     ABOUT.HTML           */
 /* ======================== */
 .about-image {
-    border-radius: 50%;
-    max-width: 100%;
+    width: 50%;
     height: auto;
     margin-bottom: 3rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .about-title {

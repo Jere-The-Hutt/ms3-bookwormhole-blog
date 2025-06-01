@@ -9,7 +9,7 @@
 			{% if "placeholder" in about.profile_image.url %}
 			<img src="{% static 'images/nobody.jpg' %}" class="about-image" alt="Profile picture">
 			{% else %}
-			<img src="{{ about.profile_image.url }}" width="75%" alt="{{ about.title }}">
+			<img src="{{ about.profile_image.url }}" class="about-image" alt="{{ about.title }}">
 			{% endif %}
 		</div>
 		<div class="col-md-8 text-center">
