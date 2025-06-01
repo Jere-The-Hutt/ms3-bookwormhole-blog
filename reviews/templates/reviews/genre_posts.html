@@ -29,11 +29,13 @@
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
                             {% if post.genre %}
-                            <p>Genre:
-                                <a href="{% url 'genre_posts' post.genre.slug %}">
-                                    {{ post.genre.name }}
-                                </a>
-                            </p>
+                            <div class="genre-info">
+                                <p>Genre:
+                                    <a href="{% url 'genre_posts' post.genre.slug %}">
+                                        {{ post.genre.name }}
+                                    </a>
+                                </p>
+                            </div>
                             {% endif %}
                             <div class="mt-auto">
                                 <hr />

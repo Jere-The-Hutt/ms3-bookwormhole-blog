@@ -139,6 +139,7 @@ footer {
 }
 
 .responsive-img {
+    max-height: 450px;
     width: 100%;
     height: auto;
     clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
@@ -163,6 +164,7 @@ footer {
 /* ======================== */
 .hero-detail-section {
     min-height: 340px;
+    max-height: 450px;
     background-color: var(--highlight-color-light);
     display: flex;
     align-items: stretch;
@@ -296,6 +298,7 @@ footer {
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
+
 /* ======================== */
 /*     GLOBAL COMPONENTS    */
 /* ======================== */
@@ -377,6 +380,23 @@ footer {
     color: var(--primary-color);
 }
 
+.genre-info p {
+    font-family: var(--font-body);
+    color: var(--highlight-color);
+}
+
+.genre-info a {
+    font-family: var(--font-body);
+    color: var(--secondary-color);
+}
+
+.auth-form.error-message {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
 /* ======================== */
 /*         SHARED UTILS     */
 /* ======================== */
@@ -430,13 +450,13 @@ footer {
 
 .custom-meta {
     font-size: 0.95rem;
-    color: #777;
+    color: var(--highlight-color);
     margin-top: 0.5rem;
 }
 
 .updated-on {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--secondary-color);
     margin-top: 2rem;
     text-align: right;
 }

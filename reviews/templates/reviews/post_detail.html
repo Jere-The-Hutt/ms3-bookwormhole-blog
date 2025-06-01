@@ -10,7 +10,7 @@
             <h1>{{ post.title }}</h1>
             <p class="custom-meta">{{ post.author }} | {{ post.created_on }}</p>
             {% if post.genre and post.genre.slug %}
-            <p class="genre-post">Genre:
+            <p class="genre-post genre-info">Genre:
                 <a href="{% url 'genre_posts' post.genre.slug %}">
                     {{ post.genre.name }}
                 </a>
